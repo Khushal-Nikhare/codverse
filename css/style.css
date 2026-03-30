@@ -83,12 +83,36 @@ img {
   justify-content: space-between;
   align-items: center;
   height: 4.5rem;
+  flex-wrap: nowrap;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--dark);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#site-logo {
+  height: 64px;
+  width: auto;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+[data-theme="dark"] #site-logo {
+  /* Invert black-on-white JPG and blend for dark theme */
+  filter: invert(1) grayscale(1) brightness(1.2);
+  mix-blend-mode: screen;
+}
+
+.logo:hover #site-logo {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  #site-logo {
+    height: 36px;
+  }
 }
 
 .nav-links {

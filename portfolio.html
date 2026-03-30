@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Codverse Tech</title>
     <meta name="description"
-        content="Check out our recent projects including business websites, automation setups, and complex web applications.">
+        content="View recent projects and case studies by Codverse Tech, from high-performance landing pages to complex enterprise automations.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <script>
         const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -17,7 +18,9 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">Codverse <span style="color: var(--primary);">Tech</span></a>
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="Codverse Tech" id="site-logo">
+            </a>
             <button class="hamburger" aria-label="Toggle Navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -36,46 +39,46 @@
         </div>
     </nav>
 
-    <header class="hero" style="padding-bottom: 2rem;">
+    <header class="hero">
         <div class="container fade-up">
-            <h1>Our Works</h1>
-            <p>A selection of projects we are proud to have built.</p>
+            <div class="hero-content">
+                <h1>Showcase of Excellence</h1>
+                <p>A curated collection of digital products and high-performance solutions.</p>
+            </div>
         </div>
+        <div class="hero-glow"></div>
     </header>
 
     <section>
         <div class="container">
             <div class="grid-3">
-                <div class="portfolio-card fade-up">
-                    <div class="portfolio-img">
-                        Business Website
+                <div class="card portfolio-card fade-up">
+                    <div class="portfolio-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/portfolio-web.jpg'); background-size: cover; height: 280px; display: flex; align-items: flex-end; padding: 1.5rem;">
+                         <span style="color: white; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; background: var(--primary); padding: 0.25rem 0.75rem; border-radius: 4px;">Web Engineering</span>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Corporate Landing Page</h3>
-                        <p>A fast, SEO-optimized business website designed to convert visitors into leads with
-                            integrated contact forms.</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card fade-up">
-                    <div class="portfolio-img">
-                        Automation Dashboard
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Sales Automation Flow</h3>
-                        <p>An end-to-end automation connecting the client's CRM, email marketing, and payment processing
-                            tools.</p>
+                    <div class="portfolio-content" style="text-align: left;">
+                        <h3>Quantum Finance Landing</h3>
+                        <p>High-conversion fintech platform with real-time data visualization and premium glass UI.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-card fade-up">
-                    <div class="portfolio-img">
-                        Admin Panel
+                <div class="card portfolio-card fade-up">
+                    <div class="portfolio-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/portfolio-auto.jpg'); background-size: cover; height: 280px; display: flex; align-items: flex-end; padding: 1.5rem;">
+                         <span style="color: white; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; background: var(--secondary); padding: 0.25rem 0.75rem; border-radius: 4px;">Automation</span>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Inventory Web App</h3>
-                        <p>A completely custom internal tool with role-based access to manage stock levels and automate
-                            reordering.</p>
+                    <div class="portfolio-content" style="text-align: left;">
+                        <h3>SaaS Pulse Optimizer</h3>
+                        <p>End-to-end sales cycle automation integrating Stripe, HubSpot, and custom node-based logic.</p>
+                    </div>
+                </div>
+
+                <div class="card portfolio-card fade-up">
+                    <div class="portfolio-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/portfolio-app.jpg'); background-size: cover; height: 280px; display: flex; align-items: flex-end; padding: 1.5rem;">
+                         <span style="color: white; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; background: var(--accent); padding: 0.25rem 0.75rem; border-radius: 4px;">Enterprise App</span>
+                    </div>
+                    <div class="portfolio-content" style="text-align: left;">
+                        <h3>LogiTrack Enterprise</h3>
+                        <p>Custom logistics management solution with predictive analytics and multi-tenant support.</p>
                     </div>
                 </div>
             </div>

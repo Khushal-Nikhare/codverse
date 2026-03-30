@@ -80,6 +80,61 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeObserver.observe(element);
     });
 
+    // Enquiry Form Submission Handler (Google Sheets Integration)
+    const enquiryForm = document.getElementById('enquiry-form');
+    const formMessage = document.getElementById('form-message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Your Google Apps Script Web App URL
+    const scriptUrl = '';
+
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Show Loading State
+            formMessage.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(enquiryForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'), // Optional field
+                message: formData.get('message')
+            };
+
+            try {
+                const response = await fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Essential for Google Apps Script Web App
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                // Display Success Message
+                formMessage.textContent = 'Thank you! Your enquiry has been sent and recorded.';
+                formMessage.style.backgroundColor = 'rgba(74, 222, 128, 0.2)';
+                formMessage.style.color = '#22c55e';
+                formMessage.style.display = 'block';
+                enquiryForm.reset();
+
+            } catch (error) {
+                console.error('Submission Error:', error);
+                formMessage.textContent = 'Oops! Something went wrong. Please try again soon.';
+                formMessage.style.backgroundColor = 'rgba(248, 113, 113, 0.2)';
+                formMessage.style.color = '#ef4444';
+                formMessage.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    }
+
     // Popup Modal Logic
     const ctaModal = document.getElementById('cta-modal');
     const closeModalBtn = document.getElementById('close-modal');
