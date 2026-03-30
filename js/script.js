@@ -86,11 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submit-btn');
 
     // Your Google Apps Script Web App URL
-    const scriptUrl = '';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbync6BsZi1QX1zNr21LtpQFGRyoo5pPbuyxGJTP5eiGknNdYkLGClVZF4O9UVdGNCX0qg/exec';
+
+    const isValidScriptUrl = (url) => {
+        return /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test((url || '').trim());
+    };
 
     if (enquiryForm) {
         enquiryForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            if (!isValidScriptUrl(scriptUrl)) {
+                formMessage.textContent = 'Form is not configured yet. Add your Google Apps Script Web App URL in js/script.js.';
+                formMessage.style.backgroundColor = 'rgba(248, 113, 113, 0.2)';
+                formMessage.style.color = '#ef4444';
+                formMessage.style.display = 'block';
+                return;
+            }
 
             // Show Loading State
             formMessage.style.display = 'none';
