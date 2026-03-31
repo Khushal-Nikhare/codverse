@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiceGarden Case Study | Codverse Tech</title>
+    <meta name="description"
+        content="Case study of SpiceGarden, a premium Indian Fusion restaurant web application featuring glassmorphism UI and intelligent reservation systems.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+    <style>
+        .project-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top left, var(--primary-glow) 0%, transparent 50%),
+                        radial-gradient(circle at bottom right, var(--secondary-glow) 0%, transparent 50%);
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--surface-high);
+            border: 1px solid var(--glass-border);
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            color: var(--primary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .screenshot-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .screenshot-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .screenshot-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            padding: 1.5rem;
+            background: var(--surface);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="Codverse Tech" id="site-logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle Navigation">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" id="theme-icon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <div class="container fade-up">
+            <a href="portfolio.html" class="back-link">← Back to Portfolio</a>
+            <span class="micro-label" style="text-transform: uppercase; letter-spacing: 0.2rem; font-weight: 700; color: var(--secondary); margin-bottom: 1rem; display: block;">Featured Case Study</span>
+            <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem;">SpiceGarden — Premium Indian Fusion Restaurant</h1>
+            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem;">
+                An extraordinary culinary destination where traditional Indian spices meet contemporary artistry and innovation.
+            </p>
+            <div class="hero-image screenshot-item" style="max-width: 1000px; margin: 0 auto;">
+                <img src="screenshots/spicegarden/home.png" alt="SpiceGarden Landing Page">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="grid-3" style="align-items: start;">
+                <div style="grid-column: span 2;">
+                    <h2 style="margin-bottom: 1.5rem; font-size: 2rem;">The Vision</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        In a world of generic dining, SpiceGarden stands out by offering a <strong>sensory journey</strong>. Our platform translates the aroma and artistry of our kitchen into a digital format, ensuring that the guest's experience begins long before they walk through our doors.
+                    </p>
+                    
+                    <h2 style="margin-bottom: 1.5rem; font-size: 2rem;">Core Capabilities</h2>
+                    <div class="feature-grid">
+                        <div class="card glass" style="padding: 2rem;">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">🍽️ Dynamic Fusion Menu</h3>
+                            <p style="font-size: 0.95rem;">Visually stunning, interactive menu allowing guests to explore dishes by category with real-time price updates.</p>
+                        </div>
+                        <div class="card glass" style="padding: 2rem;">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">📅 Intelligent Booking</h3>
+                            <p style="font-size: 0.95rem;">Multi-step reservation engine with real-time validation for precise guest preferences and table requests.</p>
+                        </div>
+                        <div class="card glass" style="padding: 2rem;">
+                            <h3 style="color: var(--primary); margin-bottom: 1rem;">📊 Managerial Insights</h3>
+                            <p style="font-size: 0.95rem;">Secure backend portal to oversee reservations, inquiries, and seasonal menu updates instantly.</p>
+                        </div>
+                        <div class="card glass" style="padding: 2rem;">
+                            <h3 style="color: var(--secondary); margin-bottom: 1rem;">🛒 Interactive Cart</h3>
+                            <p style="font-size: 0.95rem;">Persistent ordering system that allows guests to build their ideal virtual meal with high engagement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card glass" style="padding: 2.5rem; position: sticky; top: 7rem;">
+                    <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">Tech Stack</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">ES6+ JavaScript</span>
+                        <span class="tech-tag">Vanilla CSS3</span>
+                        <span class="tech-tag">Glassmorphism</span>
+                        <span class="tech-tag">CSS Grid</span>
+                        <span class="tech-tag">Flexbox</span>
+                        <span class="tech-tag">AOS Animations</span>
+                        <span class="tech-tag">Local Storage API</span>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Start Similar Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="screenshot-gallery">
+                <div class="screenshot-item fade-up">
+                    <img src="screenshots/spicegarden/menu.png" alt="Interactive Menu">
+                    <div class="caption">
+                        <strong>Interactive Menu:</strong> Culinary art meets digital design with high-resolution imagery and transitions.
+                    </div>
+                </div>
+                <div class="screenshot-item fade-up">
+                    <img src="screenshots/spicegarden/reservation.png" alt="Booking Interface">
+                    <div class="caption">
+                        <strong>Seamless Booking:</strong> Conversion-optimized form designed for maximum guest convenience and detail.
+                    </div>
+                </div>
+                <div class="screenshot-item fade-up" style="grid-column: 1 / -1;">
+                    <img src="screenshots/spicegarden/admin_dashboard.png" alt="Admin Dashboard">
+                    <div class="caption">
+                        <strong>Managerial Insights:</strong> Complete control over operations through a high-performance administrative interface.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 5rem 0;" class="fade-up">
+        <h3>Ready to build your digital presence?</h3>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Let us transform your vision into a premium engineering reality.</p>
+        <a href="contact.html" class="btn btn-primary">Get Started Now</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <p>&copy; 2026 Codverse Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
