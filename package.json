@@ -1,0 +1,12 @@
+{
+  "name": "codverse",
+  "version": "1.0.0",
+  "description": "Codverse static website",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files \"*.html, css/*.css, js/*.js\""
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}

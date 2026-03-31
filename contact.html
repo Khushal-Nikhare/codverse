@@ -39,10 +39,13 @@
         </div>
     </nav>
 
-    <header class="hero" style="padding-bottom: 2rem;">
+    <header class="hero">
         <div class="container fade-up">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear about your project and see how we can help.</p>
+            <span class="micro-label"
+                style="text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; color: var(--secondary); margin-bottom: 1rem; display: block;">Get
+                in Touch</span>
+            <h1>Project Inquiry</h1>
+            <p>Let's discuss how we can engineer your next digital breakthrough.</p>
         </div>
     </header>
 
@@ -61,29 +64,40 @@
                     </div>
                 </div>
 
-                <div class="contact-form">
+                <div class="contact-form glass"
+                    style="padding: 3.5rem; border-radius: var(--radius-lg); background: var(--surface-low); border-color: var(--primary-glow);">
                     <form id="enquiry-form">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                            <label for="name"
+                                style="color: var(--text-main); font-family: 'Space Grotesk', sans-serif;">Full
+                                Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe"
+                                style="background: var(--bg-deep); border-color: var(--glass-border); color: var(--text-main);">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            <label for="email"
+                                style="color: var(--text-main); font-family: 'Space Grotesk', sans-serif;">Email
+                                Address</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com"
+                                style="background: var(--bg-deep); border-color: var(--glass-border); color: var(--text-main);">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Mobile Number (Optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890">
+                            <label for="phone"
+                                style="color: var(--text-main); font-family: 'Space Grotesk', sans-serif;">Mobile Number
+                                (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890"
+                                style="background: var(--bg-deep); border-color: var(--glass-border); color: var(--text-main);">
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
+                            <label for="message"
+                                style="color: var(--text-main); font-family: 'Space Grotesk', sans-serif;">Description</label>
                             <textarea id="message" name="message" required
-                                placeholder="Tell us about your project..."></textarea>
+                                placeholder="Tell us about your project requirements..."
+                                style="background: var(--bg-deep); border-color: var(--glass-border); color: var(--text-main);"></textarea>
                         </div>
-                        <div id="form-message"
-                            style="margin-bottom: 1rem; display: none; padding: 1rem; border-radius: 0.5rem;"></div>
-                        <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">Send
-                            Message</button>
+                        <div id="form-message"></div>
+                        <button type="submit" class="btn btn-primary" id="submit-btn"
+                            style="width: 100%; padding: 1.25rem;">Initiate Project</button>
                     </form>
                 </div>
             </div>

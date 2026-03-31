@@ -41,34 +41,40 @@
 
     <header class="hero">
         <div class="container fade-up">
-            <h1>We help businesses grow with websites & automation</h1>
-            <p>Simple, fast, and affordable solutions for modern businesses</p>
-            <a href="contact.html" class="btn btn-primary">Get Free Demo</a>
+            <span class="micro-label"
+                style="text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; color: var(--secondary); margin-bottom: 1rem; display: block;">Engineering
+                Excellence</span>
+            <h1>Engineering the Future of Digital Commerce</h1>
+            <p>We build high-performance software systems and intelligent automation tailored for modern agencies.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                <a href="contact.html" class="btn btn-primary">Start Building Now</a>
+                <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+            </div>
         </div>
     </header>
 
     <section class="services-preview">
         <div class="container">
-            <h2 class="section-title fade-up">Our Services</h2>
+            <h2 class="section-title fade-up">Specialized Solutions</h2>
             <div class="grid-3">
-                <div class="card fade-up">
-                    <div class="feature-icon">&#128187;</div>
-                    <h3>Website Development</h3>
-                    <p>Modern, responsive, and high-converting websites built to scale your business online.</p>
+                <div class="card glass fade-up">
+                    <div class="feature-icon" style="background: var(--primary-glow);">&#128187;</div>
+                    <h3>Web Engineering</h3>
+                    <p>Scalable, high-performance web architectures that prioritize speed and user experience.</p>
                 </div>
-                <div class="card fade-up">
-                    <div class="feature-icon">&#9881;</div>
-                    <h3>Automation Solutions</h3>
-                    <p>Streamline your workflows and save time with custom business automation solutions.</p>
+                <div class="card glass fade-up">
+                    <div class="feature-icon" style="background: var(--secondary-glow);">&#9881;</div>
+                    <h3>Automation Engine</h3>
+                    <p>Deep workflow integrations that eliminate manual debt and maximize operational efficiency.</p>
                 </div>
-                <div class="card fade-up">
-                    <div class="feature-icon">&#128241;</div>
-                    <h3>Web Applications</h3>
-                    <p>Powerful and secure web applications tailored to your specific business needs.</p>
+                <div class="card glass fade-up">
+                    <div class="feature-icon" style="background: var(--primary-glow);">&#128241;</div>
+                    <h3>Enterprise Apps</h3>
+                    <p>Sophisticated multi-tenant applications designed for complex business requirements.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;" class="fade-up">
-                <a href="services.html" class="btn btn-outline">View All Services</a>
+                <a href="services.html" class="btn btn-outline">Explore All Services</a>
             </div>
         </div>
     </section>
@@ -96,11 +102,18 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" style="background: var(--surface-low); padding: 8rem 0;">
         <div class="container fade-up">
-            <h2 class="section-title">Start your project today</h2>
-            <p>Ready to transform your business with modern tech?</p>
-            <a href="contact.html" class="btn">Contact Us</a>
+            <div class="card glass"
+                style="text-align: center; padding: 5rem 2.5rem; border-color: var(--primary); background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));">
+                <h2 class="section-title" style="margin-bottom: 1.5rem; color: var(--text-headline);">Ready to
+                    accelerate your growth?</h2>
+                <p
+                    style="font-size: 1.25rem; margin-bottom: 3rem; color: var(--text-muted); max-width: 600px; margin-inline: auto;">
+                    Join the next generation of tech-driven businesses with our premium engineering solutions.</p>
+                <a href="contact.html" class="btn btn-primary"
+                    style="padding: 1.25rem 3rem; font-size: 1.1rem; color: #fff;">Build Your Vision Now</a>
+            </div>
         </div>
     </section>
 
@@ -127,11 +140,13 @@
     <!-- Popup Modal -->
     <div id="cta-modal" class="modal-overlay">
         <div class="modal-content">
-            <h2 class="modal-title">Need a Website or Automation Solution?</h2>
-            <p class="modal-description">We help businesses grow with simple and affordable tech solutions.</p>
+            <button id="close-modal-x" class="close-x" aria-label="Close Modal">&times;</button>
+            <h2 class="modal-title">Ready to Elevate Your Business?</h2>
+            <p class="modal-description">We specialize in engineering high-performance websites and intelligent
+                automation tailored for your growth.</p>
             <div class="modal-actions">
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                <button id="close-modal" class="btn btn-outline">Close</button>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <button id="close-modal" class="btn btn-outline">Maybe Later</button>
             </div>
         </div>
     </div>

@@ -80,68 +80,71 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeObserver.observe(element);
     });
 
-    // Enquiry Form Submission Handler (Google Sheets Integration)
+    // Enquiry Form Submission Handler (Optimized)
     const enquiryForm = document.getElementById('enquiry-form');
     const formMessage = document.getElementById('form-message');
     const submitBtn = document.getElementById('submit-btn');
 
-    // Your Google Apps Script Web App URL
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbync6BsZi1QX1zNr21LtpQFGRyoo5pPbuyxGJTP5eiGknNdYkLGClVZF4O9UVdGNCX0qg/exec';
 
-    const isValidScriptUrl = (url) => {
-        return /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test((url || '').trim());
-    };
-
     if (enquiryForm) {
+        let isSubmitting = false;
+
         enquiryForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            if (!isValidScriptUrl(scriptUrl)) {
-                formMessage.textContent = 'Form is not configured yet. Add your Google Apps Script Web App URL in js/script.js.';
-                formMessage.style.backgroundColor = 'rgba(248, 113, 113, 0.2)';
-                formMessage.style.color = '#ef4444';
-                formMessage.style.display = 'block';
-                return;
-            }
+            // Prevent multiple submissions (Debounce)
+            if (isSubmitting) return;
 
             // Show Loading State
-            formMessage.style.display = 'none';
+            isSubmitting = true;
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.classList.add('btn-loading');
+            submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
+            
+            // Hide previous message if any
+            formMessage.classList.remove('visible');
+            formMessage.style.display = 'none';
 
             const formData = new FormData(enquiryForm);
             const data = {
                 name: formData.get('name'),
                 email: formData.get('email'),
-                phone: formData.get('phone'), // Optional field
+                phone: formData.get('phone') || '',
                 message: formData.get('message')
             };
 
             try {
+                // Use a controller for timeout if needed, but for now focus on immediate feedback
                 const response = await fetch(scriptUrl, {
                     method: 'POST',
-                    mode: 'no-cors', // Essential for Google Apps Script Web App
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
 
-                // Display Success Message
-                formMessage.textContent = 'Thank you! Your enquiry has been sent and recorded.';
+                // Since no-cors gives an opaque response, we assume success if no error is thrown
+                formMessage.textContent = 'Success! Your message has been sent.';
                 formMessage.style.backgroundColor = 'rgba(74, 222, 128, 0.2)';
                 formMessage.style.color = '#22c55e';
                 formMessage.style.display = 'block';
+                
+                // Trigger transition
+                setTimeout(() => formMessage.classList.add('visible'), 10);
+                
                 enquiryForm.reset();
 
             } catch (error) {
                 console.error('Submission Error:', error);
-                formMessage.textContent = 'Oops! Something went wrong. Please try again soon.';
+                formMessage.textContent = 'Error! Please try again later.';
                 formMessage.style.backgroundColor = 'rgba(248, 113, 113, 0.2)';
                 formMessage.style.color = '#ef4444';
                 formMessage.style.display = 'block';
+                setTimeout(() => formMessage.classList.add('visible'), 10);
             } finally {
+                isSubmitting = false;
                 submitBtn.disabled = false;
+                submitBtn.classList.remove('btn-loading');
                 submitBtn.textContent = 'Send Message';
             }
         });
@@ -160,6 +163,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close on button click
         if (closeModalBtn) {
             closeModalBtn.addEventListener('click', () => {
+                ctaModal.classList.remove('active');
+            });
+        }
+
+        const closeModalX = document.getElementById('close-modal-x');
+        if (closeModalX) {
+            closeModalX.addEventListener('click', () => {
                 ctaModal.classList.remove('active');
             });
         }
