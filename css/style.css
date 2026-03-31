@@ -721,16 +721,17 @@ footer {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: var(--white);
+    background-color: var(--bg-deep);
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
     text-align: center;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--glass-border);
     transform: translateY(-150%);
     opacity: 0;
     transition: all 0.3s ease;
     visibility: hidden;
+    z-index: 99;
   }
 
   .nav-links.active {
