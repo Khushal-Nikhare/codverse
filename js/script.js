@@ -155,10 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('close-modal');
 
     if (ctaModal) {
-        // Show modal after 2 seconds
-        setTimeout(() => {
-            ctaModal.classList.add('active');
-        }, 2000);
+        // Show modal after 2 seconds — only once per session
+        if (!sessionStorage.getItem('popupShown')) {
+            setTimeout(() => {
+                ctaModal.classList.add('active');
+                sessionStorage.setItem('popupShown', 'true');
+            }, 2000);
+        }
 
         // Close on button click
         if (closeModalBtn) {
