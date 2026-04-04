@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.codverse.in/sitemap.xml
-Host: www.codverse.in
+

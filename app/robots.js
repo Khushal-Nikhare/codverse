@@ -5,6 +5,5 @@ export default function robots() {
       allow: '/',
     },
     sitemap: 'https://www.codverse.in/sitemap.xml',
-    host: 'https://www.codverse.in',
   };
 }
