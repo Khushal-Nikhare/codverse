@@ -1,0 +1,33 @@
+.error-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: radial-gradient(circle at top left, var(--primary-glow) 0%, transparent 45%),
+    radial-gradient(circle at bottom right, var(--secondary-glow) 0%, transparent 45%);
+}
+
+.error-card {
+  width: min(100%, 720px);
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+}
+
+.error-code {
+  font-size: clamp(4rem, 14vw, 8rem);
+  line-height: 1;
+  margin: 0 0 1rem;
+  color: var(--primary);
+}
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}

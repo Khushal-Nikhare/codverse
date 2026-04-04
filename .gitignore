@@ -5,6 +5,12 @@ node_modules/
 dist/
 build/
 out/
+.next/
+
+# Next.js app folder artifacts
+.next/
+out/
+node_modules/
 
 # Environment files
 .env
