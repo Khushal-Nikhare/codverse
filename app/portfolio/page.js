@@ -80,9 +80,7 @@ export default function PortfolioPage() {
                 className="portfolio-img"
                 style={{
                   background:
-                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324410/codverse/uploads/home_osn7jn.png
-
-')",
+                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324410/codverse/uploads/home_osn7jn.png')",
                   backgroundSize: 'cover',
                   height: '320px',
                   display: 'flex',
