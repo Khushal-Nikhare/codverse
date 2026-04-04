@@ -25,7 +25,7 @@ export default function DoctorDetailPage() {
             A modern medical interface for <span className={styles['highlight-text']}>Dr. Alisha Singh</span>, blending professional healthcare services with sophisticated clinic administration.
           </p>
           <div className={`hero-image ${styles['screenshot-item']}`} style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <Image src="/screenshots/Doctor%20protfolio/home.png" alt="Teal Dental Clinic Home Page" width={1400} height={820} priority />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324169/codverse/uploads/home_tg6uxp.png" alt="Teal Dental Clinic Home Page" width={1400} height={820} priority />
           </div>
         </div>
       </header>
@@ -86,19 +86,21 @@ export default function DoctorDetailPage() {
 
           <div className={styles['screenshot-gallery']}>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/Doctor%20protfolio/booking.png" alt="Appointment Booking Interface" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324204/codverse/uploads/booking_ls45y5.png" alt="Appointment Booking Interface" width={1400} height={900} />
               <div className={styles.caption}><strong>Patient Booking:</strong> A clean, conversion-focused interface for scheduling dental procedures.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/Doctor%20protfolio/admin_dashboard.png" alt="Administrative Dashboard" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324002/codverse/uploads/admin_dashboard_sdoolm.png
+
+" alt="Administrative Dashboard" width={1400} height={900} />
               <div className={styles.caption}><strong>Admin Overview:</strong> Real-time statistics and operational tracking for medical staff.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/Doctor%20protfolio/admin_analytics.png" alt="Clinic Analytics Hub" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323839/codverse/uploads/admin_analytics_v4g5ew.png" alt="Clinic Analytics Hub" width={1400} height={900} />
               <div className={styles.caption}><strong>Performance Analytics:</strong> Deep-dive data visualization into clinic growth and patient trends.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/Doctor%20protfolio/records.png" alt="Medical Records Search" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324258/codverse/uploads/records_a08ffc.png" alt="Medical Records Search" width={1400} height={900} />
               <div className={styles.caption}><strong>Records Search:</strong> Secure and efficient retrieval of patient histories and prescriptions.</div>
             </div>
           </div>

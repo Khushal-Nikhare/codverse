@@ -7,6 +7,8 @@ build/
 out/
 .next/
 
+
+
 # Next.js app folder artifacts
 .next/
 out/
@@ -44,3 +46,7 @@ logs/
 .eslintcache
 .stylelintcache
 .npm/
+
+* Ignore screenshots and images (if you want to keep them out of version control)
+screenshots/
+assets/

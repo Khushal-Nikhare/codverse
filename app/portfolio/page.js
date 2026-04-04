@@ -40,7 +40,7 @@ export default function PortfolioPage() {
                 className="portfolio-img"
                 style={{
                   background:
-                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/screenshots/landing_page.png')",
+                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323807/codverse/uploads/landing_page_wejrpu.png')",
                   backgroundSize: 'cover',
                   height: '320px',
                   display: 'flex',
@@ -80,7 +80,9 @@ export default function PortfolioPage() {
                 className="portfolio-img"
                 style={{
                   background:
-                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/screenshots/spicegarden/home.png')",
+                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324410/codverse/uploads/home_osn7jn.png
+
+')",
                   backgroundSize: 'cover',
                   height: '320px',
                   display: 'flex',
@@ -120,7 +122,7 @@ export default function PortfolioPage() {
                 className="portfolio-img"
                 style={{
                   background:
-                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/screenshots/Doctor%20protfolio/home.png')",
+                    "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324169/codverse/uploads/home_tg6uxp.png')",
                   backgroundSize: 'cover',
                   height: '320px',
                   display: 'flex',

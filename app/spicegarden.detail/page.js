@@ -25,7 +25,9 @@ export default function SpiceGardenDetailPage() {
             An extraordinary culinary destination where traditional Indian spices meet contemporary artistry and innovation.
           </p>
           <div className={`hero-image ${styles['screenshot-item']}`} style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <Image src="/screenshots/spicegarden/home.png" alt="SpiceGarden Landing Page" width={1400} height={820} priority />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324410/codverse/uploads/home_osn7jn.png
+
+" alt="SpiceGarden Landing Page" width={1400} height={820} priority />
           </div>
         </div>
       </header>
@@ -80,15 +82,17 @@ export default function SpiceGardenDetailPage() {
 
           <div className={styles['screenshot-gallery']}>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/spicegarden/menu.png" alt="Interactive Menu" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324450/codverse/uploads/menu_iriltr.png" alt="Interactive Menu" width={1400} height={900} />
               <div className={styles.caption}><strong>Interactive Menu:</strong> Culinary art meets digital design with high-resolution imagery and transitions.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/spicegarden/reservation.png" alt="Booking Interface" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324477/codverse/uploads/reservation_dgcaza.png
+
+" alt="Booking Interface" width={1400} height={900} />
               <div className={styles.caption}><strong>Seamless Booking:</strong> Conversion-optimized form designed for maximum guest convenience and detail.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`} style={{ gridColumn: '1 / -1' }}>
-              <Image src="/screenshots/spicegarden/admin_dashboard.png" alt="Admin Dashboard" width={1600} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775324327/codverse/uploads/admin_dashboard_lavjqx.png" alt="Admin Dashboard" width={1600} height={900} />
               <div className={styles.caption}><strong>Managerial Insights:</strong> Complete control over operations through a high-performance administrative interface.</div>
             </div>
           </div>

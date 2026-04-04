@@ -25,7 +25,7 @@ export default function HrmsDetailPage() {
             Empowering Modern Hiring with AI-Powered Precision and Real-Time Voice Analytics.
           </p>
           <div className={`hero-image ${styles['screenshot-item']}`} style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            <Image src="/screenshots/landing_page.png" alt="HRMS.ai Landing Page" width={1400} height={820} priority />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323807/codverse/uploads/landing_page_wejrpu.png" alt="HRMS.ai Landing Page" width={1400} height={820} priority />
           </div>
         </div>
       </header>
@@ -80,15 +80,15 @@ export default function HrmsDetailPage() {
 
           <div className={styles['screenshot-gallery']}>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/hr_dashboard.png" alt="HR Admin Dashboard" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323780/codverse/uploads/hr_dashboard_tocxqp.png" alt="HR Admin Dashboard" width={1400} height={900} />
               <div className={styles.caption}><strong>HR Admin Dashboard:</strong> Complete visibility over the talent pool. Monitor candidate progress and review AI scores.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`}>
-              <Image src="/screenshots/candidate_dashboard.png" alt="Candidate Console" width={1400} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323706/codverse/uploads/candidate_dashboard_qamdpi.png" alt="Candidate Console" width={1400} height={900} />
               <div className={styles.caption}><strong>Candidate Console:</strong> A personalized experience for job seekers to manage profiles and applications.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`} style={{ gridColumn: '1 / -1' }}>
-              <Image src="/screenshots/ai_interview_room.png" alt="AI Interview Room" width={1600} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323575/codverse/uploads/ai_interview_room_zg1bje.pngg" alt="AI Interview Room" width={1600} height={900} />
               <div className={styles.caption}><strong>The AI Interview Room:</strong> The crown jewel. A professional, distraction-free environment for AI-led assessments.</div>
             </div>
           </div>

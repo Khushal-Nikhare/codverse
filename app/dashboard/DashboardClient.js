@@ -12,7 +12,7 @@ export default function DashboardClient() {
       <aside className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`} id="sidebar">
         <div className={styles['sidebar-header']}>
           <div className={styles['sidebar-logo']}>
-            <Image src="/assets/logo.jpg" alt="Codverse Tech Logo" width={40} height={40} />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech Logo" width={40} height={40} />
             <span>Codverse <strong>Tech</strong></span>
           </div>
           <button className={styles['collapse-btn']} id="toggle-sidebar" onClick={() => setCollapsed((prev) => !prev)}>
@@ -38,7 +38,7 @@ export default function DashboardClient() {
       <main className={styles['main-content']}>
         <header className={styles['dashboard-header']}>
           <div className={styles['header-logo']}>
-            <Image src="/assets/logo.jpg" alt="Codverse Tech Logo" width={120} height={32} />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech Logo" width={120} height={32} />
           </div>
           <div className="header-search">
             <h3 style={{ margin: 0 }}>Project Dashboard</h3>

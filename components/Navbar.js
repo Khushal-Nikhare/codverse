@@ -64,7 +64,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="container">
         <Link href="/" className="logo">
-          <Image src="/assets/logo.jpg" alt="Codverse Tech" id="site-logo" width={180} height={48} priority />
+          <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech" id="site-logo" width={180} height={48} priority />
         </Link>
         <button className="hamburger" aria-label="Toggle Navigation" onClick={() => setMobileOpen((prev) => !prev)}>
           {mobileOpen ? '\u2715' : '\u2630'}

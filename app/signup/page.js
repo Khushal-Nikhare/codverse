@@ -15,7 +15,7 @@ export default function SignupPage() {
       <nav className="navbar">
         <div className="container">
           <Link href="/" className="logo">
-            <Image src="/assets/logo.jpg" alt="Codverse Tech" id="site-logo" width={180} height={48} priority />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech" id="site-logo" width={180} height={48} priority />
           </Link>
           <ul className="nav-links">
             <li><Link href="/">Home</Link></li>
@@ -29,7 +29,7 @@ export default function SignupPage() {
       <div className={styles['auth-wrapper']}>
         <div className={styles['auth-card']}>
           <div className={styles['auth-logo']}>
-            <Image src="/assets/logo.jpg" alt="Codverse Tech Logo" width={200} height={60} />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech Logo" width={200} height={60} />
           </div>
           <h2>Create Your Account</h2>
           <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
