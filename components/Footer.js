@@ -8,6 +8,7 @@ export default function Footer() {
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
           <Link href="/portfolio">Portfolio</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact Us</Link>
         </div>
         
