@@ -755,3 +755,64 @@ footer {
     gap: 2rem;
   }
 }
+
+/* Markdown Content Styles */
+.markdown-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.markdown-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-headline);
+  margin: 3.5rem 0 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.markdown-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-headline);
+  margin: 2.5rem 0 1rem;
+}
+
+.markdown-content p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.markdown-content ul, 
+.markdown-content ol {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.3s ease;
+}
+
+.markdown-content a:hover {
+  color: var(--secondary);
+}
+
+.markdown-content hr {
+  border: 0;
+  height: 1px;
+  background: var(--glass-border);
+  margin: 4rem 0;
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: var(--text-main);
+}

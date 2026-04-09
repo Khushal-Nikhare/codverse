@@ -1,45 +1,49 @@
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './blog.module.css';
+import { getAllPosts, getCategories } from '../../lib/posts';
 
-export const metadata = {
-  title: 'Blog | Engineering Insights & Tech Resources',
-  description: 'Practical guides on web engineering, automation, and scaling digital products from Codverse Tech.',
-};
-
-const posts = [
-  {
-    id: 1,
-    title: 'How a professional website turned our client\'s leads into sales',
-    excerpt: 'Case study on how we redesigned a stagnant B2B platform and achieved a 40% increase in conversion rates within 3 months.',
-    category: 'Business Growth',
-    author: 'Khushal Nikhare',
-    date: 'April 8, 2026',
-    readTime: '5 min read',
-    image: '📈',
-  },
-  {
-    id: 2,
-    title: 'Why your business needs more than just a social media page',
-    excerpt: 'Algorithms change, but your own domain is permanent. Explore why a central digital hub is the foundation of long-term online growth.',
-    category: 'Online Presence',
-    author: 'Engineering Team',
-    date: 'April 2, 2026',
-    readTime: '7 min read',
-    image: '🌐',
-  },
-  {
-    id: 3,
-    title: '5 signs your business is ready for a custom website',
-    excerpt: 'When templates start to feel restrictive, it is time to build a platform that fits your unique business logic and growth plans.',
-    category: 'Digital Strategy',
-    author: 'Tech Strategist',
-    date: 'March 25, 2026',
-    readTime: '6 min read',
-    image: '🛡️',
-  },
-];
+// Note: metadata was moved to layout.js because this is now a Client Component
 
 export default function BlogPage() {
+  const allPosts = getAllPosts();
+  const categories = getCategories();
+  
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+
+  // Featured post is always the first one, grid posts depend on filter
+  const featuredPost = allPosts[0];
+  const gridPosts = activeCategory === 'All' 
+    ? allPosts 
+    : allPosts.filter(p => p.category === activeCategory);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
+  };
+
   return (
     <div className={styles.blogPage}>
       {/* Hero Block */}
@@ -85,23 +89,23 @@ export default function BlogPage() {
           </div>
           <div className={styles.featuredCard}>
             <div className={styles.featuredImage}>
-              <span style={{ fontSize: '8rem' }}>{posts[0].image}</span>
+              <span style={{ fontSize: '8rem' }}>{featuredPost.emoji}</span>
             </div>
             <div className={styles.featuredContent}>
-              <span className={styles.categoryTag}>{posts[0].category}</span>
-              <h3>{posts[0].title}</h3>
-              <p>{posts[0].excerpt}</p>
+              <span className={styles.categoryTag}>{featuredPost.category}</span>
+              <h3>{featuredPost.title}</h3>
+              <p>{featuredPost.excerpt}</p>
               <div className={styles.featuredFooter}>
                 <div className={styles.author}>
                   <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--accent-gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 'bold', color: '#fff' }}>
-                    {posts[0].author.split(' ').map(n => n[0]).join('')}
+                    {featuredPost.author.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <span style={{ display: 'block', fontWeight: 700, color: 'var(--text-headline)' }}>{posts[0].author}</span>
-                    <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>{posts[0].date} • {posts[0].readTime}</span>
+                    <span style={{ display: 'block', fontWeight: 700, color: 'var(--text-headline)' }}>{featuredPost.author}</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>{featuredPost.date} • {featuredPost.readTime}</span>
                   </div>
                 </div>
-                <Link href={`/blog/${posts[0].id}`} className={styles.featuredBtn}>
+                <Link href={`/blog/${featuredPost.slug}`} className={styles.featuredBtn}>
                   Read Full Article →
                 </Link>
               </div>
@@ -111,8 +115,12 @@ export default function BlogPage() {
 
         {/* Category Filters */}
         <div className={styles.categoryFilters}>
-          {['All', 'Business Growth', 'Online Presence', 'Digital Strategy', 'Case Studies'].map((cat, i) => (
-            <button key={cat} className={`${styles.filterBtn} ${i === 0 ? styles.active : ''}`}>
+          {categories.map((cat) => (
+            <button 
+              key={cat} 
+              className={`${styles.filterBtn} ${activeCategory === cat ? styles.active : ''}`}
+              onClick={() => setActiveCategory(cat)}
+            >
               {cat}
             </button>
           ))}
@@ -120,11 +128,11 @@ export default function BlogPage() {
 
         {/* Blog Grid */}
         <div id="posts" className={styles.blogGrid}>
-          {posts.map((post) => (
-            <article key={post.id} className={styles.blogCard}>
+          {gridPosts.map((post) => (
+            <article key={post.slug} className={styles.blogCard}>
               <div className={styles.cardImage}>
                 <span className={styles.categoryTag}>{post.category}</span>
-                <span style={{ fontSize: '4.5rem' }}>{post.image}</span>
+                <span style={{ fontSize: '4.5rem' }}>{post.emoji}</span>
               </div>
               <div className={styles.cardContent}>
                 <h3>{post.title}</h3>
@@ -139,7 +147,7 @@ export default function BlogPage() {
                       <span style={{ fontSize: '0.75rem' }}>{post.date} • {post.readTime}</span>
                     </div>
                   </div>
-                  <Link href={`/blog/${post.id}`} className={styles.readMore}>
+                  <Link href={`/blog/${post.slug}`} className={styles.readMore}>
                     Read Article →
                   </Link>
                 </div>
@@ -185,10 +193,21 @@ export default function BlogPage() {
             <h4>Join 2,500+ growth-minded founders.</h4>
             <p>Weekly field notes on engineering and automation.</p>
           </div>
-          <div className={styles.stripForm}>
-            <input type="email" placeholder="Your work email" className={styles.stripInput} />
-            <button className={styles.stripBtn}>Subscribe Now</button>
-          </div>
+          <form className={styles.stripForm} onSubmit={handleSubscribe}>
+            <input 
+              type="email" 
+              placeholder="Your work email" 
+              className={styles.stripInput} 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit" className={styles.stripBtn} disabled={status === 'loading'}>
+              {status === 'loading' ? 'Loading...' : 'Subscribe Now'}
+            </button>
+          </form>
+          {status === 'success' && <p style={{ color: '#25d366', marginTop: '1rem', width: '100%', textAlign: 'right' }}>Subscribed successfully!</p>}
+          {status === 'error' && <p style={{ color: '#ff6b6b', marginTop: '1rem', width: '100%', textAlign: 'right' }}>An error occurred. Please try again.</p>}
         </section>
       </div>
     </div>
