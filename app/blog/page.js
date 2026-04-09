@@ -44,16 +44,15 @@ export default function BlogPage() {
     <div className={styles.blogPage}>
       {/* Hero Block */}
       <header className={styles.hero}>
-        <div className="container">
-          <span className="micro-label" style={{ color: 'var(--secondary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem', display: 'block' }}>
-            Inside Codverse
-          </span>
-          <h1>Engineering Insights & Tech Resources</h1>
-          <p>Practical guides on web engineering, automation, and scaling digital products.</p>
-          <div className={styles.subscribeBox}>
-            <input type="email" placeholder="Enter your email" className={styles.inputField} />
-            <button className="btn btn-primary">Subscribe for weekly insights →</button>
-          </div>
+        <div className={styles.heroContent}>
+          <span className={styles.heroLabel}>The Codverse Blog</span>
+          <h1 className={styles.heroHeadline}>Stories, Ideas & Deep Dives</h1>
+          <p className={styles.heroSubtitle}>
+            Explorations in web engineering, automation, and the art of building things.
+          </p>
+          <Link href="#posts" className={styles.heroButton}>
+            Browse All Posts →
+          </Link>
         </div>
       </header>
 
@@ -68,7 +67,7 @@ export default function BlogPage() {
         </div>
 
         {/* Blog Grid */}
-        <div className={styles.blogGrid}>
+        <div id="posts" className={styles.blogGrid}>
           {posts.map((post) => (
             <article key={post.id} className={styles.blogCard}>
               <div className={styles.cardImage}>

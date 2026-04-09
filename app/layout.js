@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import FadeUpObserver from '@/components/FadeUpObserver';
 import SiteChrome from '@/components/SiteChrome';
 import '../styles/globals.css';
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
           <FadeUpObserver />
           {children}
         </SiteChrome>
+        <Analytics />
       </body>
     </html>
   );
