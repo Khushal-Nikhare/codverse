@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -15,26 +16,10 @@ const navItems = [
 
 function ThemeIcon({ dark }) {
   if (dark) {
-    return (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" id="theme-icon">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-    );
+    return <Sun size={20} id="theme-icon" />;
   }
 
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" id="theme-icon">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-  );
+  return <Moon size={20} id="theme-icon" />;
 }
 
 export default function Navbar() {
@@ -68,7 +53,7 @@ export default function Navbar() {
           <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech" id="site-logo" width={180} height={48} priority style={{ width: 'auto' }} />
         </Link>
         <button className="hamburger" aria-label="Toggle Navigation" onClick={() => setMobileOpen((prev) => !prev)}>
-          {mobileOpen ? '\u2715' : '\u2630'}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         <ul className={`nav-links ${mobileOpen ? 'active' : ''}`}>
           {navItems.map((item) => (

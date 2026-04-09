@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import HomeModal from '@/components/HomeModal';
+import { Monitor, Cpu, Smartphone, Rocket, Wallet, Lightbulb } from 'lucide-react';
 
 export const metadata = {
-  title: 'Codverse Tech | Premium Software Solutions',
+  title: 'Codverse Tech | Software Development Company in India',
   description:
-    'Codverse Tech helps businesses grow with high-end websites, intelligent automation, and custom software systems.',
+    'Codverse Tech builds high-performance websites, automation systems, and web apps for modern businesses. Affordable, fast, and reliable — based in Indore, India.',
   alternates: {
     canonical: 'https://www.codverse.in/',
   },
@@ -28,7 +29,7 @@ export default function HomePage() {
           >
             Engineering Excellence
           </span>
-          <h1>Engineering the Future of Digital Commerce</h1>
+          <h1>Software Development Company in India</h1>
           <p>We build high-performance software systems and intelligent automation tailored for modern agencies.</p>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
             <Link href="/contact" className="btn btn-primary">Start Building Now</Link>
@@ -42,17 +43,17 @@ export default function HomePage() {
           <h2 className="section-title fade-up">Specialized Solutions</h2>
           <div className="grid-3">
             <div className="card glass fade-up">
-              <div className="feature-icon" style={{ background: 'var(--primary-glow)' }}>&#128187;</div>
+              <div className="feature-icon" style={{ background: 'var(--primary-glow)' }}><Monitor size={24} /></div>
               <h3>Web Engineering</h3>
               <p>Scalable, high-performance web architectures that prioritize speed and user experience.</p>
             </div>
             <div className="card glass fade-up">
-              <div className="feature-icon" style={{ background: 'var(--secondary-glow)' }}>&#9881;</div>
+              <div className="feature-icon" style={{ background: 'var(--secondary-glow)' }}><Cpu size={24} /></div>
               <h3>Automation Engine</h3>
               <p>Deep workflow integrations that eliminate manual debt and maximize operational efficiency.</p>
             </div>
             <div className="card glass fade-up">
-              <div className="feature-icon" style={{ background: 'var(--primary-glow)' }}>&#128241;</div>
+              <div className="feature-icon" style={{ background: 'var(--primary-glow)' }}><Smartphone size={24} /></div>
               <h3>Enterprise Apps</h3>
               <p>Sophisticated multi-tenant applications designed for complex business requirements.</p>
             </div>
@@ -68,17 +69,17 @@ export default function HomePage() {
           <h2 className="section-title fade-up">Why Choose Us</h2>
           <div className="grid-3">
             <div className="card fade-up" style={{ border: 'none', background: 'transparent', padding: '1rem' }}>
-              <div className="feature-icon">&#9201;</div>
+              <div className="feature-icon"><Rocket size={24} /></div>
               <h3>Fast Delivery</h3>
               <p>We build and launch your projects quickly without compromising on quality.</p>
             </div>
             <div className="card fade-up" style={{ border: 'none', background: 'transparent', padding: '1rem' }}>
-              <div className="feature-icon">&#128176;</div>
+              <div className="feature-icon"><Wallet size={24} /></div>
               <h3>Affordable Pricing</h3>
               <p>Premium quality software solutions that fit comfortably within your budget.</p>
             </div>
             <div className="card fade-up" style={{ border: 'none', background: 'transparent', padding: '1rem' }}>
-              <div className="feature-icon">&#128161;</div>
+              <div className="feature-icon"><Lightbulb size={24} /></div>
               <h3>Simple Solutions</h3>
               <p>We avoid unnecessary complexity. If there&apos;s a simpler way to do it, we find it.</p>
             </div>

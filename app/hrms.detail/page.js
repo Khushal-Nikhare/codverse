@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { FolderSearch, Mic, BarChart3, User } from 'lucide-react';
 
 export const metadata = {
   title: 'HRMS.ai Case Study | Codverse Tech',
@@ -42,19 +43,27 @@ export default function HrmsDetailPage() {
               <h2 style={{ marginBottom: '1.5rem', fontSize: '2rem' }}>Core Capabilities</h2>
               <div className={styles['feature-grid']}>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>📂 AI Resume Parsing</h3>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <FolderSearch size={22} /> AI Resume Parsing
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Contextual analysis of documents (PDF/DOCX) against job descriptions with weighted Match Scores.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>🎙️ Voice Interview Room</h3>
+                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <Mic size={22} /> Voice Interview Room
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Real-time, zero-latency voice interviews where AI acts as a professional recruiter with instant evaluation.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>📊 HR Analytics Hub</h3>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <BarChart3 size={22} /> HR Analytics Hub
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Centralized dashboard to track application status, candidate rankings, and interview performance metrics.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>👤 Candidate Console</h3>
+                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <User size={22} /> Candidate Console
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Personalized management for profiles, multiple resumes, and tailored job applications.</p>
                 </div>
               </div>
@@ -88,7 +97,7 @@ export default function HrmsDetailPage() {
               <div className={styles.caption}><strong>Candidate Console:</strong> A personalized experience for job seekers to manage profiles and applications.</div>
             </div>
             <div className={`${styles['screenshot-item']} fade-up`} style={{ gridColumn: '1 / -1' }}>
-              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323575/codverse/uploads/ai_interview_room_zg1bje.pngg" alt="AI Interview Room" width={1600} height={900} />
+              <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323575/codverse/uploads/ai_interview_room_zg1bje.png" alt="AI Interview Room" width={1600} height={900} />
               <div className={styles.caption}><strong>The AI Interview Room:</strong> The crown jewel. A professional, distraction-free environment for AI-led assessments.</div>
             </div>
           </div>

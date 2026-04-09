@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { CalendarRange, Files, TrendingUp, ShieldCheck } from 'lucide-react';
 
 export const metadata = {
   title: 'Teal Dental Clinic Case Study | Codverse Tech',
@@ -42,11 +43,15 @@ export default function DoctorDetailPage() {
               <h2 style={{ marginBottom: '1.5rem', fontSize: '2rem' }}>Patient Portal Features</h2>
               <div className={styles['feature-grid']} style={{ marginBottom: '4rem' }}>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: '#008080', marginBottom: '1rem' }}>📅 Seamless Booking</h3>
+                  <h3 style={{ color: '#008080', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <CalendarRange size={22} /> Seamless Booking
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>An intuitive scheduling system that allows patients to secure appointments in real-time with automatic validation.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: '#008080', marginBottom: '1rem' }}>📂 Medical Records</h3>
+                  <h3 style={{ color: '#008080', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <Files size={22} /> Medical Records
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>A secure look-up portal where patients can access their treatment history and digital prescriptions using a unique ID.</p>
                 </div>
               </div>
@@ -54,11 +59,15 @@ export default function DoctorDetailPage() {
               <h2 style={{ marginBottom: '1.5rem', fontSize: '2rem' }}>Administrative Power</h2>
               <div className={styles['feature-grid']}>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: '#ac8aff', marginBottom: '1rem' }}>📊 Advanced Analytics</h3>
+                  <h3 style={{ color: '#ac8aff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <TrendingUp size={22} /> Advanced Analytics
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Data visualization using Recharts to track patient demographics, revenue trends, and clinic growth.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: '#ac8aff', marginBottom: '1rem' }}>🔐 Management Console</h3>
+                  <h3 style={{ color: '#ac8aff', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <ShieldCheck size={22} /> Management Console
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Full CRUD operations for appointments, patient databases, and digital prescription management.</p>
                 </div>
               </div>
