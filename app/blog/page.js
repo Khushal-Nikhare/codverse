@@ -45,18 +45,70 @@ export default function BlogPage() {
       {/* Hero Block */}
       <header className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.heroLabel}>The Codverse Blog</span>
-          <h1 className={styles.heroHeadline}>Stories, Ideas & Deep Dives</h1>
+          <span className={styles.heroLabel}>Engineering Growth</span>
+          <h1 className={styles.heroHeadline}>Build Better. Scale Faster.</h1>
           <p className={styles.heroSubtitle}>
-            Explorations in web engineering, automation, and the art of building things.
+            Practical field notes on web engineering, automation, and turning tech into a growth engine.
           </p>
-          <Link href="#posts" className={styles.heroButton}>
-            Browse All Posts →
+          
+          <div className={styles.trustBar}>
+            <div className={styles.trustMetric}>
+              <span className={styles.metricValue}>50+</span>
+              <span className={styles.metricLabel}>Modern Builds</span>
+            </div>
+            <div className={styles.trustMetric}>
+              <span className={styles.metricValue}>2.5k</span>
+              <span className={styles.metricLabel}>Weekly Readers</span>
+            </div>
+            <div className={styles.trustMetric}>
+              <span className={styles.metricValue}>150+</span>
+              <span className={styles.metricLabel}>Automations</span>
+            </div>
+            <div className={styles.trustMetric}>
+              <span className={styles.metricValue}>60%</span>
+              <span className={styles.metricLabel}>Efficiency Gain</span>
+            </div>
+          </div>
+
+          <Link href="#featured" className={styles.heroButton}>
+            Start Reading →
           </Link>
         </div>
       </header>
 
       <div className="container">
+        {/* Featured Article */}
+        <section id="featured" className={styles.featuredSection}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionBadge}>Must Read</span>
+            <h2>Featured Deep Dive</h2>
+          </div>
+          <div className={styles.featuredCard}>
+            <div className={styles.featuredImage}>
+              <span style={{ fontSize: '8rem' }}>{posts[0].image}</span>
+            </div>
+            <div className={styles.featuredContent}>
+              <span className={styles.categoryTag}>{posts[0].category}</span>
+              <h3>{posts[0].title}</h3>
+              <p>{posts[0].excerpt}</p>
+              <div className={styles.featuredFooter}>
+                <div className={styles.author}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--accent-gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 'bold', color: '#fff' }}>
+                    {posts[0].author.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <span style={{ display: 'block', fontWeight: 700, color: 'var(--text-headline)' }}>{posts[0].author}</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>{posts[0].date} • {posts[0].readTime}</span>
+                  </div>
+                </div>
+                <Link href={`/blog/${posts[0].id}`} className={styles.featuredBtn}>
+                  Read Full Article →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Category Filters */}
         <div className={styles.categoryFilters}>
           {['All', 'Business Growth', 'Online Presence', 'Digital Strategy', 'Case Studies'].map((cat, i) => (
@@ -72,7 +124,7 @@ export default function BlogPage() {
             <article key={post.id} className={styles.blogCard}>
               <div className={styles.cardImage}>
                 <span className={styles.categoryTag}>{post.category}</span>
-                <span style={{ fontSize: '4rem' }}>{post.image}</span>
+                <span style={{ fontSize: '4.5rem' }}>{post.image}</span>
               </div>
               <div className={styles.cardContent}>
                 <h3>{post.title}</h3>
@@ -94,29 +146,49 @@ export default function BlogPage() {
               </div>
             </article>
           ))}
+
+          {/* Coming Soon Card */}
+          <article className={`${styles.blogCard} ${styles.comingSoonCard}`}>
+            <div className={styles.cardImage}>
+              <span style={{ fontSize: '4.5rem', opacity: 0.3 }}>⌛</span>
+            </div>
+            <div className={styles.cardContent}>
+              <span className={styles.comingSoonBadge}>Dropping Next Week</span>
+              <h3>The Blueprint for Scaling Service Agencies to $1M+ ARR</h3>
+              <p>We are condensing 5 years of engineering operations into one actionable guide. Do not miss it.</p>
+              <div className={styles.cardFooter} style={{ borderTop: 'none', paddingTop: 0 }}>
+                <Link href="#newsletter" className={styles.notifyBtn}>
+                  Notify Me →
+                </Link>
+              </div>
+            </div>
+          </article>
         </div>
 
-        {/* Mid-page Lead Capture */}
-        <section className={styles.leadBanner}>
-          <div className={styles.leadContent}>
-            <h2>Free Consultation</h2>
-            <p>Get a custom tech roadmap for your business. We&apos;ll analyze your current stack and identify growth opportunities.</p>
-            <div className={styles.subscribeBox} style={{ maxWidth: '600px' }}>
-              <input type="email" placeholder="Your business email" className={styles.inputField} />
-              <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--text-headline)', color: 'var(--bg-deep)' }}>Book Free Call</Link>
+        {/* Bold CTA consultation block */}
+        <section className={styles.boldLeadPanel}>
+          <div className={styles.panelContent}>
+            <span className={styles.panelLabel}>Limited Availability</span>
+            <h2>Ready to scale your business with custom tech?</h2>
+            <p>Book a strategy call to audit your current stack and identify high-impact automation opportunities.</p>
+            <div className={styles.panelActions}>
+              <Link href="/contact" className={styles.panelBtnPrimary}>Book Free Strategy Call</Link>
+              <Link href="/portfolio" className={styles.panelBtnSecondary}>View Our Private Case Studies</Link>
             </div>
           </div>
         </section>
 
-        {/* Newsletter Signup */}
-        <section className={styles.signupSection}>
-          <h2>Stay Ahead of the Curve</h2>
-          <p style={{ maxWidth: '600px', margin: '0 auto 2.5rem' }}>Join 2,000+ founders and agencies getting expert tech insights every week.</p>
-          <div className={styles.subscribeBox}>
-            <input type="email" placeholder="Enter your email" className={styles.inputField} />
-            <button className="btn btn-primary">Subscribe</button>
+        {/* Newsletter Strip */}
+        <section id="newsletter" className={styles.newsletterStrip}>
+          <div className={styles.stripLogo}>📩</div>
+          <div className={styles.stripText}>
+            <h4>Join 2,500+ growth-minded founders.</h4>
+            <p>Weekly field notes on engineering and automation.</p>
           </div>
-          <p className={styles.trustLine}>No spam. Unsubscribe anytime.</p>
+          <div className={styles.stripForm}>
+            <input type="email" placeholder="Your work email" className={styles.stripInput} />
+            <button className={styles.stripBtn}>Subscribe Now</button>
+          </div>
         </section>
       </div>
     </div>
