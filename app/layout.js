@@ -5,11 +5,11 @@ import '../styles/globals.css';
 export const metadata = {
   metadataBase: new URL('https://www.codverse.in'),
   title: {
-    default: 'Codverse Tech | Premium Software Solutions',
+    default: 'Codverse Tech | Software Development Company in India',
     template: '%s | Codverse Tech',
   },
   description:
-    'Codverse Tech helps businesses grow with high-end websites, intelligent automation, and custom software systems.',
+    'Codverse Tech builds high-performance websites, automation systems, and web apps for modern businesses. Affordable, fast, and reliable — based in Indore, India.',
   alternates: {
     canonical: 'https://www.codverse.in',
   },

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
+import { UtensilsCrossed, CalendarCheck2, LayoutDashboard, ShoppingBag } from 'lucide-react';
 
 export const metadata = {
   title: 'SpiceGarden Case Study | Codverse Tech',
@@ -44,19 +45,27 @@ export default function SpiceGardenDetailPage() {
               <h2 style={{ marginBottom: '1.5rem', fontSize: '2rem' }}>Core Capabilities</h2>
               <div className={styles['feature-grid']}>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>🍽️ Dynamic Fusion Menu</h3>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <UtensilsCrossed size={22} /> Dynamic Fusion Menu
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Visually stunning, interactive menu allowing guests to explore dishes by category with real-time price updates.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>📅 Intelligent Booking</h3>
+                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <CalendarCheck2 size={22} /> Intelligent Booking
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Multi-step reservation engine with real-time validation for precise guest preferences and table requests.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>📊 Managerial Insights</h3>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <LayoutDashboard size={22} /> Managerial Insights
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Secure backend portal to oversee reservations, inquiries, and seasonal menu updates instantly.</p>
                 </div>
                 <div className="card glass" style={{ padding: '2rem' }}>
-                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>🛒 Interactive Cart</h3>
+                  <h3 style={{ color: 'var(--secondary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <ShoppingBag size={22} /> Interactive Cart
+                  </h3>
                   <p style={{ fontSize: '0.95rem' }}>Persistent ordering system that allows guests to build their ideal virtual meal with high engagement.</p>
                 </div>
               </div>

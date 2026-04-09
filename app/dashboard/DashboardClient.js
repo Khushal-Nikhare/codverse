@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { Menu, BarChart2, Monitor, Settings } from 'lucide-react';
 import styles from './dashboard.module.css';
 
 export default function DashboardClient() {
@@ -12,24 +13,24 @@ export default function DashboardClient() {
       <aside className={`${styles.sidebar} ${collapsed ? styles.collapsed : ''}`} id="sidebar">
         <div className={styles['sidebar-header']}>
           <div className={styles['sidebar-logo']}>
-            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech Logo" width={40} height={40} />
+            <Image src="https://res.cloudinary.com/dr9gcw73m/image/upload/v1775323445/codverse/uploads/logo_lwdiif.jpg" alt="Codverse Tech Logo" width={40} height={40}  />
             <span>Codverse <strong>Tech</strong></span>
           </div>
           <button className={styles['collapse-btn']} id="toggle-sidebar" onClick={() => setCollapsed((prev) => !prev)}>
-            &#9776;
+            <Menu size={20} />
           </button>
         </div>
         <nav className={styles['sidebar-nav']}>
           <div className={`${styles['nav-item']} ${styles.active}`}>
-            <div className={styles['nav-item-icon']}>&#128200;</div>
+            <div className={styles['nav-item-icon']}><BarChart2 size={18} /></div>
             <span>Overview</span>
           </div>
           <div className={styles['nav-item']}>
-            <div className={styles['nav-item-icon']}>&#128187;</div>
+            <div className={styles['nav-item-icon']}><Monitor size={18} /></div>
             <span>Projects</span>
           </div>
           <div className={styles['nav-item']}>
-            <div className={styles['nav-item-icon']}>&#9881;</div>
+            <div className={styles['nav-item-icon']}><Settings size={18} /></div>
             <span>Settings</span>
           </div>
         </nav>
