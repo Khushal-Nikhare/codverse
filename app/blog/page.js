@@ -9,33 +9,33 @@ export const metadata = {
 const posts = [
   {
     id: 1,
-    title: 'How automation saved our client 40 hours/week',
-    excerpt: 'Discover how we implemented custom automation workflows to eliminate manual data entry and repetitive tasks.',
-    category: 'Automation',
-    author: 'Codverse Engineering',
-    date: 'April 5, 2026',
-    readTime: '6 min read',
-    image: '⚙️',
+    title: 'How a professional website turned our client\'s leads into sales',
+    excerpt: 'Case study on how we redesigned a stagnant B2B platform and achieved a 40% increase in conversion rates within 3 months.',
+    category: 'Business Growth',
+    author: 'Khushal Nikhare',
+    date: 'April 8, 2026',
+    readTime: '5 min read',
+    image: '📈',
   },
   {
     id: 2,
-    title: 'Next.js vs Remix in 2025: which to choose for your agency',
-    excerpt: 'Detailed comparison of the two most popular React frameworks for building modern web applications.',
-    category: 'Web Engineering',
-    author: 'Tech Lead',
-    date: 'March 28, 2026',
-    readTime: '8 min read',
-    image: '💻',
+    title: 'Why your business needs more than just a social media page',
+    excerpt: 'Algorithms change, but your own domain is permanent. Explore why a central digital hub is the foundation of long-term online growth.',
+    category: 'Online Presence',
+    author: 'Engineering Team',
+    date: 'April 2, 2026',
+    readTime: '7 min read',
+    image: '🌐',
   },
   {
     id: 3,
-    title: '5 signs your business is ready for a custom enterprise app',
-    excerpt: 'When off-the-shelf software stops working, it is time to build something tailored to your unique workflows.',
-    category: 'App Development',
-    author: 'Product Strategist',
-    date: 'March 15, 2026',
-    readTime: '5 min read',
-    image: '📱',
+    title: '5 signs your business is ready for a custom website',
+    excerpt: 'When templates start to feel restrictive, it is time to build a platform that fits your unique business logic and growth plans.',
+    category: 'Digital Strategy',
+    author: 'Tech Strategist',
+    date: 'March 25, 2026',
+    readTime: '6 min read',
+    image: '🛡️',
   },
 ];
 
@@ -59,7 +59,7 @@ export default function BlogPage() {
       <div className="container">
         {/* Category Filters */}
         <div className={styles.categoryFilters}>
-          {['All', 'Web Engineering', 'Automation', 'App Development', 'Case Studies', 'Business Growth'].map((cat, i) => (
+          {['All', 'Business Growth', 'Online Presence', 'Digital Strategy', 'Case Studies'].map((cat, i) => (
             <button key={cat} className={`${styles.filterBtn} ${i === 0 ? styles.active : ''}`}>
               {cat}
             </button>
@@ -79,13 +79,14 @@ export default function BlogPage() {
                 <p>{post.excerpt}</p>
                 <div className={styles.cardFooter}>
                   <div className={styles.author}>
-                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'var(--primary-glow)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px' }}>CT</div>
-                    <span>{post.author}</span>
+                    <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'var(--accent-gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 'bold', color: '#fff' }}>
+                      {post.author.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                      <span style={{ fontWeight: 700, color: 'var(--text-headline)' }}>{post.author}</span>
+                      <span style={{ fontSize: '0.75rem' }}>{post.date} • {post.readTime}</span>
+                    </div>
                   </div>
-                  <span>{post.date}</span>
-                </div>
-                <div className={styles.cardFooter} style={{ marginTop: '1rem' }}>
-                  <span>{post.readTime}</span>
                   <Link href={`/blog/${post.id}`} className={styles.readMore}>
                     Read Article →
                   </Link>
