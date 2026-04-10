@@ -50,3 +50,4 @@ logs/
 # Ignore screenshots and images (if you want to keep them out of version control)
 screenshots/
 assets/
+.vercel
