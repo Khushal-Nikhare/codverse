@@ -1,28 +1,46 @@
-import { getPostBySlug, getAllPosts } from '../../../lib/posts';
+// import { getPostBySlug, getAllPosts } from '../../../lib/posts'; // Removing static imports
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from '../blog.module.css';
 
-export function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+export async function generateStaticParams() {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/posts`);
+    const data = await res.json();
+    if (data.success) {
+      return data.data.map((post) => ({
+        slug: post.slug,
+      }));
+    }
+  } catch (err) {
+    console.error('Static params fetch error:', err);
+  }
+  return [];
 }
 
-export function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/posts/${slug}`);
+  const data = await res.json();
+  const post = data.success ? data.data : null;
+
   if (!post) {
     return { title: 'Post Not Found' };
   }
   return {
-    title: `${post.title} | Codverse Tech Blog`,
-    description: post.excerpt,
+    title: post.seo?.title || `${post.title} | Codverse Tech Blog`,
+    description: post.seo?.description || post.excerpt,
   };
 }
 
-export default function PostPage({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }) {
+  const { slug } = params;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/api/posts/${slug}`, { cache: 'no-store' });
+  const data = await res.json();
+  const post = data.success ? data.data : null;
   
   if (!post) {
     return (
@@ -48,11 +66,11 @@ export default function PostPage({ params }) {
            <h1 className={styles.heroHeadline} style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', textAlign: 'left', marginTop: '1rem' }}>{post.title}</h1>
            <div className={styles.author} style={{ justifyContent: 'flex-start', marginTop: '2rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '2rem' }}>
               <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--accent-gradient)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 'bold', color: '#fff' }}>
-                {post.author.split(' ').map(n => n[0]).join('')}
+                {(post.author || 'CT').split(' ').map(n => n[0]).join('')}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', textAlign: 'left' }}>
-                <span style={{ fontWeight: 700, color: 'var(--text-headline)' }}>{post.author}</span>
-                <span style={{ fontSize: '0.875rem', color: '#adaaad' }}>{post.date} • {post.readTime}</span>
+                <span style={{ fontWeight: 700, color: 'var(--text-headline)' }}>{post.author || 'Engineering Team'}</span>
+                <span style={{ fontSize: '0.875rem', color: '#adaaad' }}>{new Date(post.createdAt || Date.now()).toLocaleDateString()} • {post.readTime}</span>
               </div>
            </div>
         </div>
