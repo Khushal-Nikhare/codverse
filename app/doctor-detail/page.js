@@ -8,7 +8,7 @@ export const metadata = {
   description:
     'Case study of Teal Dental Clinic, a modern full-stack patient management and medical portfolio for Dr. Alisha Singh.',
   alternates: {
-    canonical: 'https://www.codverse.in/doctor.detail',
+    canonical: 'https://www.codverse.in/doctor-detail',
   },
 };
 

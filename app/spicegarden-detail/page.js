@@ -8,7 +8,7 @@ export const metadata = {
   description:
     'Case study of SpiceGarden, a premium Indian Fusion restaurant web application featuring glassmorphism UI and intelligent reservation systems.',
   alternates: {
-    canonical: 'https://www.codverse.in/spicegarden.detail',
+    canonical: 'https://www.codverse.in/spicegarden-detail',
   },
 };
 

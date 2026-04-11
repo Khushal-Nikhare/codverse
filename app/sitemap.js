@@ -28,19 +28,19 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/hrms.detail`,
+      url: `${baseUrl}/hrms-detail`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/spicegarden.detail`,
+      url: `${baseUrl}/spicegarden-detail`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/doctor.detail`,
+      url: `${baseUrl}/doctor-detail`,
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,

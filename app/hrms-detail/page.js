@@ -8,7 +8,7 @@ export const metadata = {
   description:
     'Case study of HRMS.ai, an intelligent recruitment ecosystem featuring Gemini-powered resume parsing and real-time AI voice interviews.',
   alternates: {
-    canonical: 'https://www.codverse.in/hrms.detail',
+    canonical: 'https://www.codverse.in/hrms-detail',
   },
 };
 
