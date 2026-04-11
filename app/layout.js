@@ -11,6 +11,9 @@ export const metadata = {
   },
   description:
     'Codverse Tech builds high-performance websites, automation systems, and web apps for modern businesses. Affordable, fast, and reliable — based in Indore, India.',
+  icons: {
+    icon: 'https://res.cloudinary.com/dr9gcw73m/image/upload/q_auto/f_auto/v1775323445/codverse/uploads/logo_lwdiif.jpg',
+  },
   alternates: {
     canonical: 'https://www.codverse.in',
   },
